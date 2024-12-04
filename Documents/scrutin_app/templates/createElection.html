@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer un scrutin</title>
+</head>
+<body>
+    <h1>Créer un nouveau scrutin</h1>
+    <form action="createElection.php" method="POST">
+        <div>
+            <label for="election_type">Type d'élection :</label>
+            <input type="text" name="election_type" id="election_type" required>
+        </div>
+        <div>
+            <label for="question">Question :</label>
+            <input type="text" name="question" id="question" required>
+        </div>
+        <div>
+            <label for="explanation">Explication :</label>
+            <textarea name="explanation" id="explanation" required></textarea>
+        </div>
+
+        
+        <div>
+            <label for="opening_date">Date d'ouverture :</label>
+            <input type="date" name="opening_date" id="opening_date" required>
+        </div>
+        <div>
+            <label for="closing_date">Date de fermeture :</label>
+            <input type="date" name="closing_date" id="closing_date" required>
+        </div>
+
+        <h3>Options de vote</h3>
+        <div id="options-container">
+            
+        </div>
+        <button type="button" onclick="addOption()">Ajouter une option</button>
+
+        <div>
+            <input type="submit" value="Créer le scrutin">
+        </div>
+    </form>
+
+    <script>
+        let optionCount = 0;
+
+        function addOption() {
+            optionCount++;
+            const optionsContainer = document.getElementById('options-container');
+            const newOption = document.createElement('div');
+            newOption.innerHTML = `
+                <label for="option_${optionCount}">Option ${optionCount} :</label>
+                <input type="text" name="options[]" id="option_${optionCount}" required>
+                <br>
+            `;
+            optionsContainer.appendChild(newOption);
+        }
+    </script>
+</body>
+</html>
