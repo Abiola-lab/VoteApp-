@@ -1,0 +1,16 @@
+{
+    "name": "akobiabiolaabdbarr/scrutin_app",
+    "type": "application",
+    "autoload": {
+        "psr-4": {
+            "Akobiabiolaabdbarr\\ScrutinApp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Abiola Akobi",
+            "email": "akobiabiola0@gmail.com"
+        }
+    ],
+    "require": {}
+}

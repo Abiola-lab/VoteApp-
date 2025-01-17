@@ -1,0 +1,10 @@
+# Ignorer les fichiers système
+.DS_Store
+Thumbs.db
+
+# Ignorer les dossiers spécifiques à l'utilisateur
+../../*
+
+# Ignorer le dossier de configuration utilisateur
+.composer/
+.vscode/
